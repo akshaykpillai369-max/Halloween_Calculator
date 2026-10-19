@@ -10,7 +10,7 @@ export default function App() {
   const [isEnded, setisEnded] = useState(false);
 
   function enterWebsite() {
-    audio = new Audio("/music.mp3")
+    audio = new Audio(`${import.meta.env.BASE_URL}music.mp3`);
     audio.loop = true
     audio.play().catch(console.error)
 
@@ -46,7 +46,7 @@ export default function App() {
   return (
     <div
       className="flex min-h-screen flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-4"
-      style={{ backgroundImage: "url('/scary_image.png')" }}
+      style={{backgroundImage: `url("${import.meta.env.BASE_URL}scary_image.png")`,}}
     >
       {!hasEntered ? (
         <div className="text-center text-black">
@@ -74,7 +74,7 @@ export default function App() {
       ) : isSpooky ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
           <video
-            src="/video.mp4"
+            src={`${import.meta.env.BASE_URL}jumpscare.mp4`}
             autoPlay
             playsInline
             onEnded={() => setisEnded(true)}
