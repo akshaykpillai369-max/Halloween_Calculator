@@ -22,7 +22,10 @@ export default function App() {
     "rounded-xl bg-orange-500 p-4 text-lg font-semibold text-white transition hover:bg-orange-600 active:scale-95";
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-950 p-4">
+    <div
+      className="flex min-h-screen flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-4"
+      style={{ backgroundImage: "url('/scary_image.png')" }}
+    >
       <main className="w-full max-w-xs rounded-2xl bg-white p-5 text-gray-900 shadow-2xl">
         <h1 className="mb-4 text-center text-xl font-bold">
           Calculator
