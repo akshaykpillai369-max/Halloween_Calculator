@@ -63,9 +63,12 @@ export default function App() {
         </div>
       ) : isSpooky ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
-          <h1 className="text-center text-3xl font-bold text-red-600">
-            YOU SHOULDN'T HAVE PRESSED THAT.
-          </h1>
+          <video
+            src="/video.mp4"
+            autoPlay
+            playsInline
+            className="h-full w-full object-contain"
+          />
         </div>
       ) : (
         <main className="w-full max-w-xs rounded-2xl bg-white p-5 text-gray-900 shadow-2xl">
