@@ -1,4 +1,21 @@
+
+import { useState } from "react";
+
 export default function App() {
+  const [display, setDisplay] = useState("");
+
+  function press(value) {
+    setDisplay((previous) => previous + value);
+  }
+
+  function clearScreen() {
+    setDisplay("");
+  }
+
+  function backspace() {
+    setDisplay((previous) => previous.slice(0, -1));
+  }
+
   const numButton =
     "rounded-xl bg-gray-100 p-4 text-lg font-semibold text-gray-800 transition hover:bg-gray-200 active:scale-95";
   const opButton =
@@ -14,31 +31,32 @@ export default function App() {
           <input
             type="text"
             id="display-screen"
+            value={display}
             readOnly
             placeholder="0"
             className="w-full rounded-xl border border-gray-200 bg-gray-50 p-4 text-right text-3xl font-medium outline-none"
           />
         </section>
         <div className="input-area grid grid-cols-4 gap-2">
-          <button className="rounded-xl bg-red-500 p-3 font-semibold text-white transition hover:bg-red-600 active:scale-95">AC</button>
-          <button className={opButton}>( )</button>
-          <button className={opButton}>%</button>
-          <button className={opButton}>÷</button>
-          <button className={numButton}>7</button>
-          <button className={numButton}>8</button>
-          <button className={numButton}>9</button>
-          <button className={opButton}>×</button>
-          <button className={numButton}>4</button>
-          <button className={numButton}>5</button>
-          <button className={numButton}>6</button>
-          <button className={opButton}>−</button>
-          <button className={numButton}>1</button>
-          <button className={numButton}>2</button>
-          <button className={numButton}>3</button>
-          <button className={opButton}>+</button>
-          <button className={numButton}>0</button>
-          <button className={numButton}>.</button>
-          <button className={numButton}>⌫</button>
+          <button onClick={clearScreen} className="rounded-xl bg-red-500 p-3 font-semibold text-white transition hover:bg-red-600 active:scale-95">AC</button>
+          <button onClick={() => press("()")} className={opButton}>( )</button>
+          <button onClick={() => press("%")} className={opButton}>%</button>
+          <button onClick={() => press("/")} className={opButton}>÷</button>
+          <button onClick={() => press("7")} className={numButton}>7</button>
+          <button onClick={() => press("8")} className={numButton}>8</button>
+          <button onClick={() => press("9")} className={numButton}>9</button>
+          <button onClick={() => press("*")} className={opButton}>×</button>
+          <button onClick={() => press("4")} className={numButton}>4</button>
+          <button onClick={() => press("5")} className={numButton}>5</button>
+          <button onClick={() => press("6")} className={numButton}>6</button>
+          <button onClick={() => press("-")} className={opButton}>−</button>
+          <button onClick={() => press("1")} className={numButton}>1</button>
+          <button onClick={() => press("2")} className={numButton}>2</button>
+          <button onClick={() => press("3")} className={numButton}>3</button>
+          <button onClick={() => press("+")} className={opButton}>+</button>
+          <button onClick={() => press("0")} className={numButton}>0</button>
+          <button onClick={() => press(".")} className={numButton}>.</button>
+          <button onClick={backspace} className={numButton}>⌫</button>
           <button className={opButton}>=</button>
         </div>
       </main>
