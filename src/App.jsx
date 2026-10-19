@@ -2,18 +2,19 @@
 import { useState } from "react";
 
 export default function App() {
-  const [display, setDisplay] = useState("");
+  const [display, setDisplay] = useState("")
+  const [isSpooky, setIsSpooky] = useState(false)
 
   function press(value) {
-    setDisplay((previous) => previous + value);
+    setDisplay((previous) => previous + value)
   }
 
   function clearScreen() {
-    setDisplay("");
+    setDisplay("")
   }
 
   function backspace() {
-    setDisplay((previous) => previous.slice(0, -1));
+    setDisplay((previous) => previous.slice(0, -1))
   }
 
   const numButton =
@@ -26,6 +27,13 @@ export default function App() {
       className="flex min-h-screen flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-4"
       style={{ backgroundImage: "url('/scary_image.png')" }}
     >
+      {isSpooky ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
+          <h1 className="text-center text-3xl font-bold text-red-600">
+            YOU SHOULDN'T HAVE PRESSED THAT.
+          </h1>
+        </div>
+      ) : (
       <main className="w-full max-w-xs rounded-2xl bg-white p-5 text-gray-900 shadow-2xl">
         <h1 className="mb-4 text-center text-xl font-bold">
           Calculator
@@ -60,9 +68,15 @@ export default function App() {
           <button onClick={() => press("0")} className={numButton}>0</button>
           <button onClick={() => press(".")} className={numButton}>.</button>
           <button onClick={backspace} className={numButton}>⌫</button>
-          <button className={opButton}>=</button>
+          <button
+            onClick={() => setIsSpooky(true)}
+            className={opButton}
+          >
+            =
+          </button>
         </div>
       </main>
+      )}
     </div>
-  );
+  )
 }
