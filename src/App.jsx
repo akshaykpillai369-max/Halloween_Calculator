@@ -74,7 +74,7 @@ export default function App() {
       ) : isSpooky ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
           <video
-            src={`${import.meta.env.BASE_URL}jumpscare.mp4`}
+            src={`${import.meta.env.BASE_URL}video.mp4`}
             autoPlay
             playsInline
             onEnded={() => setisEnded(true)}
