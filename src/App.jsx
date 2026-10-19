@@ -7,6 +7,7 @@ export default function App() {
   const [display, setDisplay] = useState("")
   const [isSpooky, setIsSpooky] = useState(false)
   const [hasEntered, setHasEntered] = useState(false)
+  const [isEnded, setisEnded] = useState(false);
 
   function enterWebsite() {
     audio = new Audio("/music.mp3")
@@ -61,12 +62,22 @@ export default function App() {
             ENTER
           </button>
         </div>
+      ) : isEnded ? (
+          <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-center">
+            <h1 className="text-5xl font-bold text-orange-500">
+              HAPPY HALLOWEEN
+            </h1>
+            <p className="mt-4 text-xl text-white">
+              You survived... this time.😂
+            </p>
+          </div>
       ) : isSpooky ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
           <video
             src="/video.mp4"
             autoPlay
             playsInline
+            onEnded={() => setisEnded(true)}
             className="h-full w-full object-contain"
           />
         </div>
