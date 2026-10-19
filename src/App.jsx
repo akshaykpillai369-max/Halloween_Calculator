@@ -45,14 +45,19 @@ export default function App() {
 
   return (
     <div
-      className="flex min-h-screen flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-4"
+      className="flex min-h-screen flex-col items-center bg-cover bg-center bg-no-repeat p-4"
       style={{backgroundImage: `url("${import.meta.env.BASE_URL}scary_image.png")`,}}
     >
       {!hasEntered ? (
-        <div className="text-center text-black">
+        <div className="text-center">
           <h1 className="mb-4 text-4xl font-bold">
             THE CALCULATOR
           </h1>
+          <p className="mt-4 max-w-sm text-sm text-white mb-5">
+            ⚠️ Warning: Contains sudden jump scares and scary sounds.
+            If you have a heart condition or are recovering from a serious
+            illness, please avoid this experience.
+          </p>
 
 
 
@@ -63,11 +68,7 @@ export default function App() {
             ENTER
           </button>
 
-          <p className="mt-4 max-w-sm text-sm text-white">
-            ⚠️ Warning: Contains sudden jump scares and scary sounds.
-            If you have a heart condition or are recovering from a serious
-            illness, please avoid this experience.
-          </p>
+          
         </div>
       ) : isEnded ? (
           <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-center">
