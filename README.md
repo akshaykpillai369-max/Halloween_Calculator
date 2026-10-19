@@ -2,14 +2,23 @@
 
 Hey this is a calculator made in halloween theme
 
+# ⚠️ Warning
+This website contains sudden jump scares and scary sounds. If you have a heart condition or are recovering from a serious illness, please avoid the live demo.
+
+Viewer discretion is advised.
+
 # Why I made this
 
-I made this because this is halloween season and 3 am said me to make one
+I made this because this is halloween season and 3am said to me to make one
 
 # Stack
 - React
 - Vite
 - Tailwind CSS
+
+# How to run this
+
+Go to this link: https://akshaykpillai369-max.github.io/Halloween_Calculator/
 
 # Screenshot
 
