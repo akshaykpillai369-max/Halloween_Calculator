@@ -55,12 +55,19 @@ export default function App() {
           </h1>
 
 
+
           <button
             onClick={enterWebsite}
             className="rounded-xl bg-red-700 px-8 py-3 font-bold text-white hover:bg-red-600"
           >
             ENTER
           </button>
+
+          <p className="mt-4 max-w-sm text-sm text-white">
+            ⚠️ Warning: Contains sudden jump scares and scary sounds.
+            If you have a heart condition or are recovering from a serious
+            illness, please avoid this experience.
+          </p>
         </div>
       ) : isEnded ? (
           <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-center">
